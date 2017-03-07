@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="jquery-2.2.4.js"></script>
+    <title>Partie 4 exo 4</title>
+  </head>
+  <body>
+<form>
+  <label for="Name">Votre nom</label>
+  <input type="text" name="Name" value="" id="Name"><br/>
+  <label for="userName">Votre prénom</label>
+  <input type="text" name="userName" value="" id="userName"><br/>
+  <label for="Date">Votre date de naissance</label>
+  <input type="text" name="Date" value="" id="Date"><br/>
+  <label for="place">Votre lieu de naissance</label>
+  <input type="text" name="place" value="" id="place"><br/>
+  <label for="job">Votre job</label>
+  <input type="text" name="job" value="" id="job"><br/>
+  <label for="society">Votre societé</label>
+  <input type="text" name="society" value="" id="society"><br/>
+
+  <button type="button" name="button" id="button">Générer</button>
+</form>
+
+<script>
+$("#button").click(function(){
+  // je déclare ttes mes variables
+  var name = $("#Name").val();
+  var userName = $("#userName").val();
+  var birthday = $("#Date").val();
+  var city = $("#place").val();
+  var job = $("#job").val();
+  var society = $("#society").val();
+alert (name + " " + userName + ", " + " né le " + birthday + " à " + city + ", " + " actuellement " + job + " à " + society);
+})
+</script>
+
+
+  </body>
+</html>
