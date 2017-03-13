@@ -25,18 +25,68 @@
 </form>
 
 <script>
-$("#button").click(function(){
-  // je déclare ttes mes variables
-  var name = $("#Name").val();
-  var userName = $("#userName").val();
-  var birthday = $("#Date").val();
-  var city = $("#place").val();
-  var job = $("#job").val();
-  var society = $("#society").val();
-alert (name + " " + userName + ", " + " né le " + birthday + " à " + city + ", " + " actuellement " + job + " à " + society);
+$(document).ready(function(){
+  $("#button").click(function(){
+    // je déclare ttes mes variables
+    var name = $("#Name");
+    var userName = $("#userName");
+    var birthday = $("#Date");
+    var city = $("#place");
+    var job = $("#job");
+    var society = $("#society");
+    var message = "";
+var nameRegex = /^[a-zA-Z\s]+$/i;
+var birthdayRegex = ;
+ // le ! veut dire si la verif est mauvaise.
+ if(!name.val().match(nameRegex)){
+   // la bordure se met en rouge
+   name.css("border","red 1px solid");
+   alert ("Votre nom est incorrect");
+ }else{
+   // la bordure se met en vert
+   name.css("border","green 1px solid");
+   // affiche le message 
+   message += name.val() + ' ';
+ }
+ if (!userName.val().match(nameRegex)) {
+   alert ("Votre prénom est incorrect");
+   userName.css("border","red 1px solid");
+ }else{
+   userName.css("border","green 1px solid");
+   message += userName.val() + ', né le ';
+ }
+ if (!birthday.val().match(birthdayRegex)) {
+ alert("Votre date est invalide");
+ birthday.css("border", "red 1px solid");
+ }else{
+   birthday.css("border", "green 1px solid");
+   message += birthday.val() + ' , à ';
+
+ }
+ if (city.val()=="") {
+ alert("rentrez une ville");
+ city.css("border", "red 1px solid");
+ }else{
+  city.css("border", "green 1px solid");
+  message += city.val() + ' , actuellement ';
+ }
+ if (job.val()=="") {
+ alert("rentrez un taf");
+ job.css("border", "red 1px solid");
+ }else{
+   job.css("border", "green 1px solid");
+   message += job.val() + ' chez ';
+ }
+ if (society.val()=="") {
+ alert("rentrez un employeur");
+ society.css("border", "red 1px solid");
+ }else{
+   society.css("border", "green 1px solid");
+   message += society.val();
+ }
+ alert (message);
+  });
 })
 </script>
-
-
   </body>
 </html>
